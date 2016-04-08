@@ -1,4 +1,4 @@
-AC_PREREQ( 2.59 )
+AC_PREREQ([2.69])
 
 AC_INIT(
  [libnsfdb],
@@ -19,7 +19,13 @@ dnl Check for large file support
 AC_SYS_LARGEFILE
 
 dnl Check for libtool DLL support
-AC_LIBTOOL_WIN32_DLL
+AC_REQUIRE(AC_CANONICAL_HOST)_LT_SET_OPTION([LT_INIT],[win32-dll])
+AC_DIAGNOSE([obsolete],[AC_REQUIRE(AC_CANONICAL_HOST)_LT_SET_OPTION([LT_INIT],[win32-dll])
+AC_DIAGNOSE([obsolete],[AC_LIBTOOL_WIN32_DLL: Remove this warning and the call to _LT_SET_OPTION when you
+put the `win32-dll' option into LT_INIT's first parameter.])
+: Remove this warning and the call to _LT_SET_OPTION when you
+put the `win32-dll' option into LT_INIT's first parameter.])
+
 
 dnl Checks for programs
 AC_PROG_CC
@@ -28,7 +34,7 @@ AC_PROG_MAKE_SET
 AC_PROG_INSTALL
 
 dnl Check for libtool
-AC_PROG_LIBTOOL
+LT_INIT
 AC_SUBST(LIBTOOL_DEPS)
 
 dnl Check for pkg-config
