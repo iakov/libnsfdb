@@ -5,10 +5,11 @@ AC_INIT(
  [20170719],
  [joachim.metz@gmail.com])
 
-AC_CONFIG_SRCDIR(
- [include/libnsfdb.h.in])
+AC_CONFIG_SRCDIR([include/libnsfdb.h.in])
 
 AM_INIT_AUTOMAKE([gnu 1.6 tar-ustar])
+
+#AM_GNU_GETTEXT_VERSION(0.18.3)
 
 AC_CONFIG_MACRO_DIR([m4])
 
@@ -19,12 +20,12 @@ dnl Check for large file support
 AC_SYS_LARGEFILE
 
 dnl Check for libtool DLL support
-AC_REQUIRE(AC_CANONICAL_HOST)_LT_SET_OPTION([LT_INIT],[win32-dll])
-AC_DIAGNOSE([obsolete],[AC_REQUIRE(AC_CANONICAL_HOST)_LT_SET_OPTION([LT_INIT],[win32-dll])
-AC_DIAGNOSE([obsolete],[AC_LIBTOOL_WIN32_DLL: Remove this warning and the call to _LT_SET_OPTION when you
-put the `win32-dll' option into LT_INIT's first parameter.])
-: Remove this warning and the call to _LT_SET_OPTION when you
-put the `win32-dll' option into LT_INIT's first parameter.])
+#AC_REQUIRE(AC_CANONICAL_HOST)_LT_SET_OPTION([LT_INIT],[win32-dll])
+#AC_DIAGNOSE([obsolete],[AC_REQUIRE(AC_CANONICAL_HOST)_LT_SET_OPTION([LT_INIT],[win32-dll])
+#AC_DIAGNOSE([obsolete],[AC_LIBTOOL_WIN32_DLL: Remove this warning and the call to _LT_SET_OPTION when you
+#put the `win32-dll' option into LT_INIT's first parameter.])
+#: Remove this warning and the call to _LT_SET_OPTION when you
+#put the `win32-dll' option into LT_INIT's first parameter.])
 
 
 dnl Checks for programs
