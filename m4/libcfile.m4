@@ -320,6 +320,9 @@ AC_DEFUN([AX_LIBCFILE_CHECK_LOCAL],
    [1])
   ])
 
+ dnl File input/output functions used in libcfile/libcfile_support.c
+ AC_CHECK_FUNCS([stat unlink])
+
  AS_IF(
   [test "x$ac_cv_func_unlink" != xyes],
   [AC_MSG_FAILURE(
