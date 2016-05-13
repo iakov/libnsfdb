@@ -1,15 +1,14 @@
-AC_PREREQ([2.69])
+AC_PREREQ( 2.59 )
 
 AC_INIT(
  [libnsfdb],
  [20170719],
  [joachim.metz@gmail.com])
 
-AC_CONFIG_SRCDIR([include/libnsfdb.h.in])
+AC_CONFIG_SRCDIR(
+ [include/libnsfdb.h.in])
 
 AM_INIT_AUTOMAKE([gnu 1.6 tar-ustar])
-
-#AM_GNU_GETTEXT_VERSION(0.18.3)
 
 AC_CONFIG_MACRO_DIR([m4])
 
@@ -20,13 +19,7 @@ dnl Check for large file support
 AC_SYS_LARGEFILE
 
 dnl Check for libtool DLL support
-#AC_REQUIRE(AC_CANONICAL_HOST)_LT_SET_OPTION([LT_INIT],[win32-dll])
-#AC_DIAGNOSE([obsolete],[AC_REQUIRE(AC_CANONICAL_HOST)_LT_SET_OPTION([LT_INIT],[win32-dll])
-#AC_DIAGNOSE([obsolete],[AC_LIBTOOL_WIN32_DLL: Remove this warning and the call to _LT_SET_OPTION when you
-#put the `win32-dll' option into LT_INIT's first parameter.])
-#: Remove this warning and the call to _LT_SET_OPTION when you
-#put the `win32-dll' option into LT_INIT's first parameter.])
-
+AC_LIBTOOL_WIN32_DLL
 
 dnl Checks for programs
 AC_PROG_CC
@@ -35,7 +28,7 @@ AC_PROG_MAKE_SET
 AC_PROG_INSTALL
 
 dnl Check for libtool
-LT_INIT
+AC_PROG_LIBTOOL
 AC_SUBST(LIBTOOL_DEPS)
 
 dnl Check for pkg-config
@@ -43,7 +36,7 @@ AC_PATH_PROG(PKGCONFIG,[pkg-config])
 
 dnl Support of internationalization (i18n)
 AM_GNU_GETTEXT([external])
-AM_GNU_GETTEXT_VERSION([0.18.3])
+AM_GNU_GETTEXT_VERSION([0.18.1])
 
 dnl Check for compiler language support
 AC_C_CONST
